@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape>
+        <solid android:color="@color/loginBtnColor"></solid>
+        <corners android:radius="28dp"></corners>
+        <stroke android:color="@color/black"
+            android:width="@dimen/cardview_default_radius"></stroke>
+    </shape>
+</item>
+</selector>

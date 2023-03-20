@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".welcome_activity">
+
+    <TextView
+        android:id="@+id/welcome_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textAlignment="center"
+        android:textColor="@color/add_color"
+        android:layout_marginTop="24dp"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"/>
+
+    <TextView
+        android:id="@+id/how_long"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:text="How long is your menstrual cycle?"
+        android:layout_below="@id/welcome_tv"
+        android:layout_marginTop="36dp"/>
+
+    <TextView
+        android:id="@+id/sentence_1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/black"
+        android:text="The duration of two periods start date usually 23 - 35 days."
+        android:layout_below="@id/how_long"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/length_days_entry"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/purple_500"
+        android:textColorHint="@color/teal_700"
+        android:hint="28"
+        android:singleLine="true"
+        android:inputType="number"
+        android:layout_below="@id/sentence_1"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/how_long_p"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:text="How long is your period?"
+        android:layout_below="@id/length_days_entry"
+        android:layout_marginTop="36dp"/>
+
+    <TextView
+        android:id="@+id/sentence_2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/black"
+        android:text="Bleeding usually lasts between 4 -7 days."
+        android:layout_below="@id/how_long_p"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/length_days_p_entry"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/purple_500"
+        android:textColorHint="@color/teal_700"
+        android:hint="4"
+        android:inputType="number"
+        android:singleLine="true"
+        android:layout_below="@id/sentence_2"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/last_start"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:text="When did your last period start?"
+        android:layout_below="@id/length_days_p_entry"
+        android:layout_marginTop="36dp"/>
+
+    <TextView
+        android:id="@+id/tap_to_set"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/purple_200"
+        android:text="Tap here to set"
+        android:layout_below="@id/last_start"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/myLayout3"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tap_to_set"
+        android:layout_marginTop="36dp">
+
+        <Button
+            android:id="@+id/edit_period"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/white"
+            android:text="Cancel"
+            android:layout_marginRight="28dp"
+            app:backgroundTint="#4692C8"
+            android:background="@drawable/btn_bg"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/white"
+            android:text="Done"
+            android:layout_marginLeft="28dp"
+            app:backgroundTint="#1E72AE"
+            android:background="@drawable/btn_bg"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>
