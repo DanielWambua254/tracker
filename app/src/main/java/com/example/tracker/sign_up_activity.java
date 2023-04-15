@@ -13,6 +13,8 @@ public class sign_up_activity extends AppCompatActivity {
 
     Button done;
     EditText username, myPassword1, myPassword2;
+    DBHelper DB;
+    public  static final String EXTRA_TEXT = "com.example.tracker.EXTRA_TEXT";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,7 @@ public class sign_up_activity extends AppCompatActivity {
         username = findViewById(R.id.userName);
         myPassword1 = findViewById(R.id.password);
         myPassword2 = findViewById(R.id.confirmPassword);
+        DB = new DBHelper(this);
 
         done.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,9 +48,24 @@ public class sign_up_activity extends AppCompatActivity {
                             Toast.makeText(sign_up_activity.this, "Password too long.", Toast.LENGTH_SHORT).show();
                         } else {
                             if (password1.equals(password2)) {
-                                Intent intent = new Intent(sign_up_activity.this,welcome_activity.class);
-                                startActivity(intent);
-                                finish();
+                                Boolean userExists = DB.checkUser(userName);
+
+                                if (!userExists) {
+                                    Boolean addUser = DB.newUser(userName, password1);
+                                    if (addUser) {
+                                        Toast.makeText(sign_up_activity.this, "Account created successfully.", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(sign_up_activity.this,welcome_activity.class);
+                                        // passing this data to next activity
+                                        intent.putExtra(EXTRA_TEXT, userName);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        Toast.makeText(sign_up_activity.this, "Failed!", Toast.LENGTH_SHORT).show();
+                                    }
+                                } else {
+                                    Toast.makeText(sign_up_activity.this, "user already exists!", Toast.LENGTH_SHORT).show();
+                                }
+
                             } else {
                                 Toast.makeText(sign_up_activity.this, "Entered passwords do not match.", Toast.LENGTH_SHORT).show();
                             }

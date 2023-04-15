@@ -17,7 +17,7 @@
         android:layout_marginLeft="24dp"/>
 
     <TextView
-        android:id="@+id/usernameTv"
+        android:id="@+id/userNameTv"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
@@ -26,7 +26,7 @@
         android:layout_below="@id/back_arrow"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif-light"/>
+        android:fontFamily="sans-serif-medium"/>
 
     <LinearLayout
         android:id="@+id/layOut1"
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="24dp"
-        android:layout_below="@id/usernameTv"
+        android:layout_below="@id/userNameTv"
         android:layout_centerHorizontal="true">
 
         <TextView
@@ -52,13 +52,13 @@
             android:id="@+id/p_length_days_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textColor="@color/purple_500"
             android:text="4 Days"
             android:layout_below="@id/back_arrow"
             android:layout_marginLeft="130dp"
             android:layout_marginTop="24dp"
-            android:fontFamily="sans-serif-medium" />
+            android:fontFamily="sans-serif-light" />
     </LinearLayout>
 
     <LinearLayout
@@ -66,7 +66,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="24dp"
+
         android:layout_below="@id/layOut1"
         android:layout_centerHorizontal="true">
 
@@ -85,27 +85,30 @@
             android:id="@+id/c_length_days_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textColor="@color/purple_500"
             android:text="18 Days"
             android:layout_below="@id/back_arrow"
             android:layout_marginLeft="130dp"
             android:layout_marginTop="24dp"
-            android:fontFamily="sans-serif-medium" />
+            android:fontFamily="sans-serif-light" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/passwordManagerTv"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:text="Account manager"
-        android:layout_below="@id/layOut2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
-        android:fontFamily="sans-serif-light"/>
 
+    <Button
+        android:id="@+id/doneBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:text="show symptoms"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/layOut2"
+        android:layout_marginTop="206dp"
+        android:background="@drawable/btn_bg"
+        app:backgroundTint="@color/loginBtnColor"
+        android:fontFamily="sans-serif-light"
+        android:textSize="16sp"/>
 
 </RelativeLayout>

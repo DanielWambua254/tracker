@@ -1,3 +1,74 @@
 <resources>
     <string name="app_name">Tracker</string>
+
+    <string name="Period_pain_relief">Period pain relief</string>
+    <string name="period_tips">
+        1.  Apply heat \n
+         \n
+        2. Take pain killers \n
+         \n
+        3. Exercise \n
+         \n
+        4. Take steps to reduce stress \n
+        \n
+        5. Get your vitamins and    minerals.\n
+        \n
+        6. Drink more water to    reduce bloating
+    </string>
+
+    <string name="foot_massage">Foot massage</string>
+    <string name="foot_massage_tips">
+        1. Hold the foot with one hand on either side. \n
+        \n
+        2. place the fingers on the top of the foot.\n
+        \n
+        3. place the thumbs under each foot, on the toe pads. \n
+        \n
+        4. use the thumbs to stroke down each toe, using moderate pressure.\n
+        \n
+        5. move to the ball of the foot, repeating the downward stroke motion with the thumbs.\n
+    </string>
+
+    <string name="lower_back_pain">Lower back pain relief tips</string>
+    <string name="lower_back_pain_tips">
+       1.   Keep Moving \n
+         \n
+        2. Take pain killers \n
+         \n
+        3. Stretch and Strengthen \n
+         \n
+        4. Keep Good Posture \n
+        \n
+        5. Get your vitamins and    minerals.\n
+        \n
+        6. Avoiding alcohol, caffeine, and smoking.
+    </string>
+
+    <string name="neck_pain">Neck pain relief tips</string>
+    <string name="neck_pain_tips">
+        1. Apply heat or ice \n
+        \n
+        2. Take pain killers \n
+        \n
+        3. Stretch but avoid sudden movements \n
+        \n
+        4. Limit physical activity that bothers your neck \n
+        \n
+        5. Consider chiropractic care
+    </string>
+
+    <string name="morning_warm_up">Morning warm up</string>
+    <string name="morning_warm_up_tips">
+        1. A simple, light walk \n
+        \n
+        2. Yoga  \n
+        \n
+        3. Light lifting  \n
+        \n
+        4. jog jog \n
+        \n
+        4. Dancing  \n
+        \n
+        5. Stretching
+    </string>
 </resources>

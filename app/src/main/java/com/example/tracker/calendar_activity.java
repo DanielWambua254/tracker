@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.DateFormat;
 import java.time.LocalDate;
@@ -27,8 +30,11 @@ public class calendar_activity extends AppCompatActivity implements calender_ada
     private LocalDate selectDate;
 
     private Button nextMonth, prevMonth, menu;
-
-    LinearLayout todayBtn, careBtn;
+    FloatingActionButton symptomsBtn;
+    LinearLayout todayBtn, careBtn, remindersBtn;
+    DBHelper DB;
+    SharedPreferences sharedPreferences;
+    public static final String KEY_USERNAME = "name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,13 @@ public class calendar_activity extends AppCompatActivity implements calender_ada
         setContentView(R.layout.activity_calendar);
 
         widgets();
+
+        DB = new DBHelper(this);
+
+        sharedPreferences = getSharedPreferences(KEY_USERNAME,MODE_PRIVATE);
+        String userNameTXT = sharedPreferences.getString(KEY_USERNAME, null);
+
+
         selectDate = LocalDate.now();
         monthYear.setText(monthDate(selectDate));
         ArrayList<String> daysInMonth = daysInMonthArray(selectDate);
@@ -77,6 +90,22 @@ public class calendar_activity extends AppCompatActivity implements calender_ada
             }
         });
 
+        symptomsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(calendar_activity.this,symptoms_activity.class);
+                startActivity(intent);
+            }
+        });
+        remindersBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(calendar_activity.this,reminder_activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +127,8 @@ public class calendar_activity extends AppCompatActivity implements calender_ada
         careBtn  =findViewById(R.id.supportBtn);
         todayBtn  =findViewById(R.id.homeBtn);
         menu = findViewById(R.id.menu);
+        remindersBtn = findViewById(R.id.settingsBtn);
+        symptomsBtn = findViewById(R.id.floatingActionBtn);
     }
     private void setMonthView() {
         monthYear.setText(monthDate(selectDate));
